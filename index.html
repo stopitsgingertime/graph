@@ -156,18 +156,19 @@ node.append("circle")
      var minRadius = 10;
      return minRadius + (d.weight * 2);
    })
-     .style("fill", function(d) {
+      .style("fill", function(d) {
   if(d.weight > 4) {
         return "red";
     } else {
-      if(d.weight > 3) {return "orange"; } else {
+      
+      if(d.weight > 2) { return "orange";
+                        
+                       } else {
       
       
-      
-        return "gray";
+        return "yellow";
     }
 });
-
 
 
 node.append("text")
@@ -213,7 +214,7 @@ function tick() {
        return l.source.index == d.index || l.target.index == d.index
      }).size();      
      var minRadius = 10;
-     return minRadius + (d.weight * 3);
+     return minRadius + (d.weight * 4);
    });
  }
 
