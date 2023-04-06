@@ -157,10 +157,19 @@ node.append("circle")
      return minRadius + (d.weight * 2);
    })
       .style("fill", function(d) {
+ 
+  
   if(d.weight > 3) {
-        return "orange";
-    } else {
-        return "yellow";
+       return "red";
+   
+  
+  } else {
+            if d.weight >=2 { return "orange"; 
+                             
+                            } else {
+                        
+    
+          return "yellow";
     }
 });
 
