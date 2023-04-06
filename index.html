@@ -147,12 +147,13 @@ var node = svg.selectAll(".node")
     .call(force.drag);
 
 node.append("circle")
-   .attr("r", function(d) {      
+  .attr("r", function(d) {      
      d.weight = link.filter(function(l) {
        return l.source.index == d.index || l.target.index == d.index
      }).size();      
      var minRadius = 10;
      return minRadius + (d.weight * 2);
+   });
      .style("fill", function(d) {
   if(d.value > 50) {
         return "red";
