@@ -148,12 +148,10 @@ var node = svg.selectAll(".node")
 
 node.append("circle")
     .attr("r", 8)
-     .style("fill", function(d){if(d.val > 50) {
-        return "red";
-    } else {
-        return "gray";
-    }
-}); 
+     .style("fill", function(d) {
+    return d.value ? "green" : "red";
+});
+
 
 
 node.append("text")
