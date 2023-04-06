@@ -1,5 +1,4 @@
 <head>
-<script src="https://d3js.org/d3.v7.min.js"></script>
 
 </head>
 
@@ -26,10 +25,15 @@ text {
 
 </style>
 
+<body>
+
 <div>
+<script src="https://d3js.org/d3.v7.min.js"></script>
 
 
 <script>
+  
+  
 
 var links = [
   {source: "Microsoft", target: "Amazon", type: "licensing"},
@@ -150,4 +154,9 @@ function mouseout() {
       .attr("r", 8);
 }
 
+  var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+  
 </script></div>
+</body>
