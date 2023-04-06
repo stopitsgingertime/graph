@@ -62,7 +62,7 @@ var links = [
   {source: "Nansen", target: "Amundsen", type: "hero worship"},
   {source: "Amundsen", target: "Scott", type: "RACE 2 DA POLE"},
   {source: "Amundsen", target: "Shackles", type: "mutual appreciation"},
-  {source: "Amundsen", target: "ADG", type: "dom/sub"},
+  {source: "ADG", target: "Amundsen", type: "dom/sub"},
   {source: "Amundsen", target: "Cook", type: "soulmates"},
   {source: "Shackles", target: "Wild", type: "soulmates", value:"100"},
   {source: "Shackles", target: "Hurley", type: "m&ms are in play"},
@@ -79,7 +79,7 @@ var links = [
    {source: "Mawson", target: "Wild", type: "expedition type beat"},
      {source: "Mawson", target: "Mertz", type: "he ATE HIM"},
      {source: "Mertz", target: "Ninnis", type: "soulmates"},
- {source: "Cook", target: "ADG", type: "penguin forcefeeding"},
+ {source: "ADG", target: "Cook", type: "penguin forcefeeding"},
    {source: "ADG", target: "Lecointe", type: "loyal attack dog"},
    {source: "Racovitza", target: "Lecointe", type: "lying with his full weight on top of him"},
      {source: "Racovitza", target: "Arctowski", type: "ass-centric caricature"},
@@ -113,7 +113,7 @@ var links = [
          {source: "Worsley", target: "Marr", type: "that's his son"},
   
         {source: "Wordie", target: "Deb", type: "peepaw rivalry"},
-     {source: "Wordie", target: "Hussey", type: "the joplittle of endurance"},
+     {source: "Hussey", target: "Wordie", type: "the joplittle of endurance"},
     {source: "Amundsen", target: "Wisting", type: "best boy"},
        {source: "Wordie", target: "Clark", type: "if you believe michael smith"},
   
@@ -123,7 +123,7 @@ var links = [
         {source: "McIlroy", target: "Wild", type: "colonialism bfs"},
         {source: "McIlroy", target: "Macklin", type: "doctor bj bros"},
 
-       {source: "McIlroy", target: "Hussey", type: "billabong boys"},
+       {source: "Hussey", target: "McIlroy", type: "billabong boys"},
          {source: "McIlroy", target: "Hurley", type: "billabong boys"},
        {source: "Hussey", target: "Hurley", type: "billabong boys"},
 
@@ -154,14 +154,14 @@ links.forEach(function(link) {
 });
 
 var width = 1920,
-    height = 1080;
+    height = 900;
 
 var force = d3.layout.force()
     .nodes(d3.values(nodes))
     .links(links)
     .size([width, height])
-    .linkDistance(200)
-    .charge(-300)
+    .linkDistance(220)
+    .charge(-270)
     .on("tick", tick)
     .start();
 
