@@ -21,9 +21,6 @@ text {
   pointer-events: none;
 }
 
-  .important {
-    fill:red;
-  }
 
 
 </style>
@@ -42,7 +39,7 @@ text {
   
 
 var links = [
-  {source: "Scott", target: "Wilson", type: "soulmates", value:"important"},
+  {source: "Scott", target: "Wilson", type: "soulmates", value:"100"},
   {source: "Scott", target: "Kathleen", type: "married"},
   {source: "Scott", target: "Shackles", type: "toxic polycule"},
   {source: "Scott", target: "Teddy", type: "detested second-in-command"},
@@ -67,7 +64,7 @@ var links = [
   {source: "Amundsen", target: "Shackles", type: "mutual appreciation"},
   {source: "Amundsen", target: "ADG", type: "dom/sub"},
   {source: "Amundsen", target: "Cook", type: "soulmates"},
-  {source: "Shackles", target: "Wild", type: "soulmates", value:"important"},
+  {source: "Shackles", target: "Wild", type: "soulmates", value:"100"},
   {source: "Shackles", target: "Hurley", type: "m&ms are in play"},
   {source: "ADG", target: "Shackles", type: "mostly boat sales"},
   {source: "Kathleen", target: "Mawson", type: "if you believe david day"},
@@ -148,10 +145,6 @@ var node = svg.selectAll(".node")
     .on("mouseover", mouseover)
     .on("mouseout", mouseout)
     .call(force.drag);
-  
-  var color = d3.scale.linear()
-  .domain([0, 5, 9])  
-  .range(["blue", "yellow", "green"]); 
 
 node.append("circle")
   .attr("r", function(d) {      
@@ -203,20 +196,19 @@ function tick() {
   node
       .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 }
-  
-/**
+
 function mouseover() {
   d3.select(this).select("circle").transition()
       .duration(750)
       .attr("r", 16);
-} 
+}
 
 function mouseout() {
   d3.select(this).select("circle").transition()
       .duration(750)
       .attr("r", 8);
 }
-**/
+
 
 </script></div>
 </body>
