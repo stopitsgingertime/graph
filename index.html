@@ -145,6 +145,8 @@ var node = svg.selectAll(".node")
     .on("mouseover", mouseover)
     .on("mouseout", mouseout)
     .call(force.drag);
+  
+
 
 node.append("circle")
   .attr("r", function(d) {      
@@ -155,7 +157,7 @@ node.append("circle")
      return minRadius + (d.weight * 2);
    })
      .style("fill", function(d) {
-  if(d.value > 50) {
+  if(d.weight > 2) {
         return "red";
     } else {
         return "gray";
@@ -197,17 +199,19 @@ function tick() {
       .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 }
 
-function mouseover() {
-  d3.select(this).select("circle").transition()
-      .duration(750)
-      .attr("r", 16);
-}
 
-function mouseout() {
-  d3.select(this).select("circle").transition()
-      .duration(750)
-      .attr("r", 8);
-}
+  
+// function mouseover() {
+//  d3.select(this).select("circle").transition()
+//      .duration(750)
+//      .attr("r", 16);
+// }
+
+// function mouseout() {
+//  d3.select(this).select("circle").transition()
+//      .duration(750)
+ //     .attr("r", 8);
+// }
 
 
 </script></div>
