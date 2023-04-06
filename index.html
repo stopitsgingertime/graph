@@ -39,8 +39,8 @@ text {
   
 
 var links = [
-  {source: "Scott", target: "Wilson", type: "soulmates"},
-  {source: "Scott", target: "Kathleen", type: "mrried"},
+  {source: "Scott", target: "Wilson", type: "soulmates", color:"red"},
+  {source: "Scott", target: "Kathleen", type: "married"},
   {source: "Scott", target: "Shackles", type: "toxic polycule"},
   {source: "Scott", target: "Teddy", type: "detested second-in-command"},
   {source: "Wilson", target: "Shackles", type: "toxic polycule"},
@@ -64,7 +64,7 @@ var links = [
   {source: "Amundsen", target: "Shackles", type: "mutual appreciation"},
   {source: "Amundsen", target: "ADG", type: "dom/sub"},
   {source: "Amundsen", target: "Cook", type: "soulmates"},
-  {source: "Shackles", target: "Wild", type: "soulmates"},
+  {source: "Shackles", target: "Wild", type: "soulmates", color:"red"},
   {source: "Shackles", target: "Hurley", type: "m&ms are in play"},
   {source: "ADG", target: "Shackles", type: "mostly boat sales"},
   {source: "Kathleen", target: "Mawson", type: "if you believe david day"},
@@ -148,7 +148,13 @@ var node = svg.selectAll(".node")
 
 node.append("circle")
     .attr("r", 8)
-     .style("fill", "blue");
+     .style("fill", function(d){if(d.color = "red") {
+        return "red";
+    } else {
+        return "gray";
+    }
+}); 
+
 
 node.append("text")
     .attr("dx", 12)
